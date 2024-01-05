@@ -1,0 +1,178 @@
+<div class="container">
+  <form
+    class="justify-content-center"
+    [formGroup]="taskDetailsForm"
+    (ngSubmit)="onFormSubmit()"
+  >
+    <div class="d-flex justify-content-center">
+      <!-- dsa -->
+      <span>
+        <div class="input">
+          <input
+            formControlName="taskId"
+            type="text"
+            class="input-field"
+            required
+          />
+          <label class="input-label">Task Id</label>
+        </div>
+
+        <!--  -->
+        <span
+          class="card text-white bg-danger"
+          [hidden]="taskId.valid || taskId.untouched"
+        >
+          <div class="validation" [hidden]="!taskId.hasError('minlength')">
+            <span class="validationStar">*</span> Task Id cannot be less than 4
+            characters.
+          </div>
+
+          <div class="validation" [hidden]="!taskId.hasError('required')">
+            <span class="validationStar">*</span> Task Id is required.
+          </div>
+        </span>
+      </span>
+    </div>
+
+    <!-- Task name -->
+    <div class="d-flex justify-content-around">
+      <span>
+        <div class="d-flex justify-content-center">
+          <div class="input">
+            <input
+              formControlName="taskName"
+              type="text"
+              class="input-field"
+              required
+            />
+            <label class="input-label">Enter Task name</label>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <span
+            class="card text-white bg-danger"
+            [hidden]="taskName.valid || taskName.untouched"
+          >
+            <div class="validation" [hidden]="!taskName.hasError('minlength')">
+              <span class="validationStar">*</span> Task Name cannot be less
+              than 4 characters.
+            </div>
+
+            <div class="validation" [hidden]="!taskName.hasError('required')">
+              <span class="validationStar">*</span> Task is required.
+            </div>
+          </span>
+        </div>
+      </span>
+
+      <span>
+        <div>
+          <div class="input">
+            <input
+              formControlName="taskStatus"
+              type="text"
+              class="input-field"
+              required
+            />
+            <label class="input-label">Enter Task Status</label>
+          </div>
+          <div class="d-flex justify-content-center">
+            <span
+              class="card text-white bg-danger"
+              [hidden]="taskStatus.valid || taskStatus.untouched"
+            >
+              <div
+                class="validation"
+                [hidden]="!taskStatus.hasError('minlength')"
+              >
+                <span class="validationStar">*</span> Task Status cannot be less
+                than 4 characters.
+              </div>
+
+              <div
+                class="validation"
+                [hidden]="!taskStatus.hasError('required')"
+              >
+                <span class="validationStar">*</span> Task Status is required.
+              </div>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div>
+
+    <div class="d-flex justify-content-around">
+      <span>
+        <div class="input">
+          <input
+            title="Created Date"
+            class="input-field-date"
+            formControlName="createdDate"
+            type="date"
+          />
+          <label class="input-label">Created Date</label>
+        </div>
+      </span>
+
+      <span>
+        <div class="input">
+          <input
+          class="input-field-date"
+          formControlName="lastUpdatedDate"
+            title="Last Updated Date"
+            type="date"
+          />
+          <label class="input-label">Last Updated Date</label>
+        </div>
+      </span>
+    </div>
+
+    <br /><br />
+
+    <!-- Task Status -->
+
+    <div class="d-flex justify-content-center">
+
+      <div class="input  d-flex justify-content-center">
+        <textarea
+          class="inputt-field"
+          formControlName="taskDescription"
+          required
+        >
+        </textarea>
+        <label class="input-label">Enter Task Description</label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <span class="card text-white bg-danger" [hidden]="taskDescription.valid || taskDescription.untouched">
+        <div
+          class="validation"
+          [hidden]="!taskDescription.hasError('minlength')"
+        >
+          <span class="validationStar">*</span> Task Status cannot be less than
+          4 characters.
+        </div>
+
+        <div
+          class="validation"
+          [hidden]="!taskDescription.hasError('required')"
+        >
+          <span class="validationStar">*</span> Task Description is required.
+        </div>
+      </span>
+    </div>
+
+    <br />
+    <div class="submitBtn d-flex justify-content-around">
+      <button
+        [disabled]="!taskDetailsForm.valid"
+        type="submit"
+        class="btn btn-success"
+      >
+        Submit
+      </button>
+      <button (click)="cancel()" class="btn btn-danger">Cancel</button>
+    </div>
+  </form>
+</div>

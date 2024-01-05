@@ -1,0 +1,196 @@
+<div class="container">
+  <div class="pb-2 d-flex justify-content-between">
+
+    <h4>RTO Status</h4>
+    <button class="btn buttonToday btn-primary"(click)="todayDay()"> Today</button>
+
+  </div>
+
+ 
+
+  <form
+    class="justify-content-center"
+    [formGroup]="rtoStatusForm"
+    (ngSubmit)="submit()"
+  >
+    <div class="d-flex justify-content-between">
+      <button (click)="minus7Days()" type="button" class="btn btn-primary">
+        <!-- &#8592; -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-left-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
+          />
+        </svg>
+      </button>
+
+      <div class="table-responsive">
+        <table>
+          <tr class="bg-primary">
+            <th *ngFor="let day of daysArrays">
+              <h5>{{ day | date : "cccc" }}</h5>
+              <h5>{{ day | date : "mediumDate" }}</h5>
+            </th>
+          </tr>
+
+          <tr>
+            <td>
+              <div style="text-align: center">Non-Working Day</div>
+              <!-- <select formControlName="day1" name="" id="">
+                <option disabled selected value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                               <option value="Disengagement">&nbsp;Disengagement&nbsp;</option>
+
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select> -->
+            </td>
+
+            <td>
+              <select
+                [(ngModel)]="selectedOption2"
+                formControlName="day2"
+                name=""
+                id=""
+              >
+                <option disabled selected value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                <option value="Disengagement">&nbsp;Disengagement&nbsp;</option>
+
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select>
+            </td>
+            <td>
+              <select
+                [(ngModel)]="selectedOption3"
+                formControlName="day3"
+                name=""
+                id=""
+              >
+                <option value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                <option value="Disengagement">&nbsp;Disengagement&nbsp;</option>
+
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select>
+            </td>
+            <td>
+              <select
+                [(ngModel)]="selectedOption4"
+                formControlName="day4"
+                name=""
+                id=""
+              >
+                <option value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                <option value="Disengagement">&nbsp;Disengagement&nbsp;</option>
+
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select>
+            </td>
+            <td>
+              <select
+                [(ngModel)]="selectedOption5"
+                formControlName="day5"
+                name=""
+                id=""
+              >
+                <option value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                <option value="Disengagement">&nbsp;Disengagement&nbsp;</option>
+
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select>
+            </td>
+            <td>
+              <select
+                [(ngModel)]="selectedOption6"
+                formControlName="day6"
+                name=""
+                id=""
+              >
+                <option value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                <option value="Disengagement">&nbsp;Disengagement&nbsp;</option>
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select>
+            </td>
+            <td>
+              <div style="text-align: center">Non-Working Day</div>
+              <!-- <select formControlName="day7" name="" id="">
+                <option value="">Select Status</option>
+                <option value="Office">&nbsp;Office &nbsp;</option>
+                <option value="WFH">&nbsp;Work From Home&nbsp;</option>
+                <option value="Holiday">&nbsp;Holiday&nbsp;</option>
+                <option value="Disengagement">
+                  &nbsp;Disengagement&nbsp;
+                </option>
+                <option value="Leave">&nbsp;Leave&nbsp;</option>
+              </select> -->
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button (click)="plus7Days()" type="button" class="btn btn-primary">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-caret-right-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button style="width: 200px; height: 40px" class="buttons" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+
+ 
+
+  <div class="calendar-container">
+    <full-calendar   [options]="calendarOptions"></full-calendar>
+  </div>
+</div>
+
+<!-- <div class="d-flex offDays justify-content-around">
+  <span
+    ><h4>
+      Office Days:
+      <span
+        [ngClass]="{
+          'green-background':
+            this.rtoService.officeDaysOfThatMonth?.length > 12,
+          'red-background': this.rtoService.officeDaysOfThatMonth?.length < 13
+        }"
+        class="badge rounded-pill"
+        >{{ this.rtoService.officeDaysOfThatMonth?.length }}/13
+      </span>
+    </h4></span
+  >
+</div> -->

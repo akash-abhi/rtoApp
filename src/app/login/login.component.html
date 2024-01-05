@@ -1,0 +1,48 @@
+<span class="d-flex justify-content-center dfsaff">
+  <div class="overallDiv">
+    <div class="row divRow">
+      <div class="col fork d-flex justify-content-center">
+        <img class="me-5 cts-logo" title="Cognizant" src="../../assets/images/cts.png" alt="Cognizant" />
+
+        <img
+          class="pt-1 ms-5 tiaa-logo"
+          src="../../assets/images/tiaa.png"
+          alt="TIAA"
+          title="TIAA"
+        />
+      </div>
+      <div class="col mt-4">
+        <form [formGroup]="userForm" (ngSubmit)="onLogin()">
+          <label for="username"><b>Employee ID</b></label>
+          <input
+            id="username"
+            type="number"
+            formControlName="empId"
+            placeholder="Enter Employee ID"
+            name="username"
+            required
+          />
+
+          <label for="password"><b>Password</b></label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Enter Password"
+            name="password"
+            required
+          />
+
+          <h5 *ngIf="loginStatus" style="color: rgb(0, 183, 255)">
+            OOPS ! Username or Password is invalid . . .
+          </h5>
+          <h5 *ngIf="nullStatus" style="color: rgb(0, 183, 255)">
+            Please Enter Valid User Credentials . . .
+          </h5>
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</span>

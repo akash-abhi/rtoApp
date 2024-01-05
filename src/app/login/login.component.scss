@@ -1,0 +1,102 @@
+
+.overallDiv {
+  margin-top: 200px;
+  padding: 16px;
+  width: 60%;
+  height: 100%;
+  background-color: rgb(165, 231, 255);
+}
+.dfsaff {
+  align-items: center;
+}
+.tiaa-logo {
+  width: 100px;
+} 
+
+.cts-logo {
+  width: 130px;
+  height: 70px;
+}
+
+.fork {
+  align-items: center;
+  justify-content: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Full-width input fields */
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #006594;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.divRow {
+  border-radius: 40%;
+}
+
+
+// knnkj
+
+
+
+
+.wrapper{
+  display: inline-flex;
+  height: 50px;
+  width: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.wrapper .option{
+  background: #fff;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #0069d9;
+  transition: all 0.3s ease;
+}
+input[type="radio"]{
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2{
+  border-color: #0069d9;
+  background: #0069d9;
+}
+
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span{
+  color: #fff;
+}

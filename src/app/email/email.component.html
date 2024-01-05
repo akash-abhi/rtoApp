@@ -1,0 +1,129 @@
+
+
+<div>
+  <!-- <label for="template">Select Template : &nbsp;</label>
+    <select id="template" [(ngModel)]="selectedTemplate">
+      <option *ngFor="let template of templates" value="template.tId">{{template.tName}}</option>
+    </select>
+
+    template container
+    <div *ngIf="isTemplateViewPopupVisible" class="popup-container">
+      <app-template-view (closePopup)="togglePopup()"></app-template-view>
+
+    </div> -->
+
+  
+ 
+    <div class="container card mt-1 mb-1 shadow-lg" style="height: 100vh;">
+      
+     
+      
+      <div><button class="btn btn-primary mt-3 allEmail" (click)="getAllEmail()">RTO Defaulters</button></div> <br>
+
+     
+
+      <div *ngIf="rtoDefaultersEmployees && rtoDefaultersEmployees.length>0">
+      
+
+      <table  style="width: 100%;background-color: aquamarine; border-radius: 20px;" class="table table-striped">
+       <thead>
+        <tr >
+          <th>Emp Id</th>
+         
+          <th>Emp Email</th>
+          <th>Total No. of Days</th>
+          <th>Location</th>
+          <th ><div style="display: flex;">Action <input [(ngModel)]="selectAll" (change)="onSelectAllChange()" style="width: 15px;" type="checkbox"></div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of rtoDefaultersEmployees;let i = index">
+          <td>{{emp.empId}}</td>
+          <td>{{emp.emailId}}</td>
+          <td>{{emp.totalDays}}</td>
+          <td>{{emp.baselocation}}</td>
+         <td><input [(ngModel)]="emp.selected" (change)="onCheckBoxClicked()" style="width:100px;" type="checkbox"></td>
+        </tr>
+      </tbody>
+
+       
+      </table>
+      <!-- <button (click)="onShowSelected()">Show Selected Employees</button> -->
+
+    </div>
+
+      <!-- <table class="table ">
+        <thead  >
+          <tr>
+            <th scope="col" >#</th>
+            <th scope="col" >Emp Id</th>
+            <th scope="col" >Emp Name</th>
+            <th scope="col" >Emp Email</th>
+            <th scope="col"  class="text-center ">Check for mail</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let emp of allUsers;let i = index">
+            
+            <th scope="row"  >{{i+1}}</th>
+            <td >{{emp.empId}}</td>
+            <td >{{emp.firstName}} {{emp.lastName}}</td>
+            <td >{{emp.emailId}}</td>
+            <td ><input type="checkbox"></td>
+          </tr>
+          
+        </tbody>
+      </table> -->
+
+
+      <form (ngSubmit)="sendEmail()" [formGroup]="emailForm">
+      <div class="space">
+        <button  class="btn btn-primary"  type="Submit">Send &nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+      <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+    </svg></button>
+        <input formControlName="senderMail" type="text" class="sendbutton" name="" id=""  value="">
+      </div>
+      <div  class="space">
+        <button class="btn btn-light to" >To</button>
+        <input formControlName="toEmail" type="text" name="" id="toEmails" value="{{selectedEmails}}">
+      </div>
+
+
+
+      <!-- Code for template -->
+      <div><button class="btn btn-primary mt-3 allEmail" (click)="togglePopup()">RTO Template</button></div> <br>
+
+      <!-- Code for template drop down -->
+ <div *ngIf="isTemplateViewPopupVisible" class="popup-container">
+      <app-template-view (closePopup)="togglePopup()"></app-template-view>
+
+    </div>
+
+     
+
+      <!-- <div class="d-flex justify-content-center ">
+        <br/>
+      <label for="party">Enter a date and time to trigger mail : </label>
+      <input 
+      formControlName="dateAndTime"
+      class="inputdate"
+        id="party"
+        type="datetime-local"
+        name="partydate"
+        value="2017-06-01T08:30" />
+      
+      </div> -->
+      <br/>
+      <div class="space">
+        <input formControlName="subject" type="text" class="subjectInput" placeholder="   Add a subject" >
+      </div>
+      <div class="space">
+        <textarea formControlName="body" name="" id="" cols="100vw" rows="10" placeholder="   Type/to insert files and more"></textarea>
+      </div>
+    </form>
+    </div>
+    </div>
+
+
+    
+  

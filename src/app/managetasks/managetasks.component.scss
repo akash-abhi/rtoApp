@@ -1,0 +1,212 @@
+// .dateClass{
+//   width: 140%;
+// }
+
+
+// .validation {
+//     color: rgb(0, 0, 0);
+//   }
+//   .validationStar {
+//     color: rgb(255, 4, 4);
+//     font-weight: bold;
+//     font-size: 1.5em;
+//   }
+//   span >input {
+//     width: 100%;
+//   }
+//   textarea{
+//     width: 70%;
+    
+//     display: block;
+//     margin: auto auto;
+//     margin-top: 2em;
+//     padding: 0.5em 0;
+//     border: none;
+//     border-bottom: 2px solid rgb(20, 141, 255);
+//     padding-bottom: 1.25em;
+//     color: #757575;
+//     &:focus {
+//       outline: none;
+//     }
+//     &:hover {
+//       &:hover {
+//         background-color: rgb(202, 215, 253);
+//       }
+//     }
+//   }
+//   input {
+//     display: block;
+//     margin: auto auto;
+//     // width: 95%;
+//     margin-top: 2em;
+//     padding: 0.5em 0;
+//     border: none;
+//     border-bottom: 2px solid rgb(20, 141, 255);
+//     padding-bottom: 1.25em;
+//     color: #757575;
+//     &:focus {
+//       outline: none;
+//     }
+//     &:hover {
+//       &:hover {
+//         background-color: rgb(202, 215, 253);
+//       }
+//     }
+//   }
+  
+//   input::-webkit-outer-spin-button,
+//   input::-webkit-inner-spin-button {
+//     -webkit-appearance: none;
+//     margin: 0;
+//   }
+
+
+
+
+
+input,textarea {
+	appearance: none;
+	border-radius: 0;
+}
+
+.card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#00d0ff, .25);
+	padding: .15rem;
+}
+
+.card-image {
+	border-radius: 8px;
+	overflow: hidden;
+	padding-bottom: 65%;
+	background-image: url('https://assets.codepen.io/285131/coffee_1.jpg');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: 0 5%;
+	position: relative;
+}
+
+.card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	line-height: 1.222;
+	small {
+		display: block;
+		font-size: .75em;
+		font-weight: 400;
+		margin-top: .25em;
+	}
+}
+
+
+
+.input {
+	margin: 24px;
+
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+	&+.input {
+		margin-top: 1.5rem;
+	}
+}
+
+.input-label {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	color: #000000;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+.card{
+	margin-top : 0px;
+	margin-bottom : 0px;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #66a6ff; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}
+
+
+.inputt-field {
+	width: 600px;
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #66a6ff; 
+	font: inherit;
+	font-size: 0.9rem;
+	padding: .25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}
+
+.input-field-date{
+		border: 0;
+		z-index: 1;
+		width: 210px;
+		background-color: transparent;
+		border-bottom: 2px solid #66a6ff; 
+		font: inherit;
+		font-size: 1.125rem;
+		padding: .25rem 0;
+		&:focus, &:valid {
+			outline: 0;
+			border-bottom-color: #6658d3;
+			&+.input-label {
+				color: #6658d3;
+				transform: translateY(-1.5rem);
+			}
+		}
+}
+
+
+
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: .875rem;
+	color: #48b6ff;
+	a {
+		display: block;
+		color: #ffffff;
+		text-decoration: none;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+}
+
+
+
+

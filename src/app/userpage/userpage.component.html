@@ -1,0 +1,32 @@
+<div class="d-flex">
+  <div class="col-2">
+    <div class="sidenav">
+      <br />
+      <a routerLink="dashboard">Dashboard</a>
+      <br />
+
+      <!-- <a routerLink="managetasks">Manages Tasks</a> -->
+      <!-- <br /> -->
+      <a>Manages Tasks</a>
+      <br />
+
+      <!-- <a routerLink="manageuser">Manage User​</a>
+      <br /> -->
+
+      <a routerLink="teamprofiles">Team Profiles</a>
+      <br />
+
+
+      <a routerLink="email">Email</a>
+      <br />
+
+    </div>
+  </div>
+
+  <div class="col-10">
+    <!-- <div>
+      <h4>Welcome back , {{ this.userService.currentUserData.username }}</h4>
+    </div> -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

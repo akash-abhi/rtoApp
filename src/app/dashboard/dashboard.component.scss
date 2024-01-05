@@ -1,0 +1,84 @@
+h5 {
+  margin-right: 20px;
+  color: white;
+}
+
+
+
+.fc .fc-toolbar.fc-header-toolbar{
+  margin-bottom: 0.2rem !important;  
+}
+
+
+:host {
+  display: block;
+}
+
+
+
+th {
+  padding-right: 4px;
+  border: 4px;
+  border-color: red;
+}
+.offDays {
+  background-color: rgb(165, 231, 255);
+}
+
+h4 {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+table,
+th,
+td {
+  border: 5px solid white;
+}
+select {
+  height: 40px;
+}
+option {
+  font-size: 20px;
+  padding-left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.custom-event-class {
+  /* Add your custom styles here */
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+ 
+full-calendar {
+  height: 300px;
+}
+.buttons {
+  background-color: #0179b1;
+  color: white;
+  margin-top: 4px;
+  margin-bottom: 7px;
+  border: none;
+  cursor: pointer;
+  width: 210%;
+}
+
+.fc-multimonth-month{
+  width: 50% !important;
+
+}
+
+.green-background {
+  background-color: rgb(0, 207, 17);
+}
+.red-background {
+  background-color: rgb(253, 19, 2);
+}
+
+
+
+.fc-daygrid-day{
+  background-color: red;
+}
